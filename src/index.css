@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clear { text-indent: -999999px }
+
+.clear::before{
+  padding-right: 2rem; 
+  content: '\f55a';
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
