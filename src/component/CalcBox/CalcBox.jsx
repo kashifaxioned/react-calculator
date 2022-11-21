@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
 export default function CalcBox() {
-  const numArr = Array.from(Array(10).keys());
 
   const btns = [
     "+",
@@ -36,6 +35,7 @@ export default function CalcBox() {
     } else if (inp === "c") {
       setInpVal((prev) => prev.substring(0, prev.length - 1));
     } else {
+      if(inpVal.length === 0 && (inp === '0' || inp === "+" || inp === "-" || inp === "/" || inp === "*") ) return;  
       const prev = inpVal.charAt(inpVal.length - 1);
       if (inp === "+" || inp === "-" || inp === "/" || inp === "*") {
         if (!(prev === "+" || prev === "-" || prev === "/" || prev === "*")) {
